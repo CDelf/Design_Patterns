@@ -25,23 +25,23 @@ public class IElementCompositeTest {
         dsin = new Service("DSIN");
         e1 = new Employe("Raspey", "Céline", 10000);
         e2 = new Employe("Bechkar", "Bilel", 8000);
-        dsin.addComposant(e1);
-        dsin.addComposant(e2);
+        dsin.addElement(e1);
+        dsin.addElement(e2);
 
         javaDev = new Service("Java Dev");
         e3 = new Employe("Guineau", "Kevin", 7500);
         e4 = new Employe("Martin", "Paul", 3500);
-        javaDev.addComposant(e3);
-        javaDev.addComposant(e4);
+        javaDev.addElement(e3);
+        javaDev.addElement(e4);
 
         bigData = new Service("Big Data");
         e5 = new Employe("Ranmey", "JB", 7500);
         e6 = new Employe("Doe", "Jane", 3500);
-        bigData.addComposant(e5);
-        bigData.addComposant(e6);
+        bigData.addElement(e5);
+        bigData.addElement(e6);
 
-        dsin.addComposant(javaDev);
-        dsin.addComposant(bigData);
+        dsin.addElement(javaDev);
+        dsin.addElement(bigData);
     }
 
     @Test

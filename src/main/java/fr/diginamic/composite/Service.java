@@ -1,28 +1,25 @@
 package fr.diginamic.composite;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Service implements IElement{
     private String nom;
-    private List<IElement> composants;
+    private List<IElement> elements;
 
     public Service(String nom) {
         this.nom = nom;
-        this.composants = new ArrayList<>();
+        this.elements = new ArrayList<>();
     }
 
     @Override
     public double calculerSalaire() {
-        double total = 0;
-        for (IElement c : composants) {
-            total += c.calculerSalaire();
-        }
-        return total;
+        return elements.stream().mapToDouble(e -> e.calculerSalaire()).sum();
     }
 
-    public void addComposant(IElement composant) {
-        composants.add(composant);
+    public void addElement(IElement element) {
+        elements.add(element);
     }
 
     public String getNom() {
@@ -33,11 +30,7 @@ public class Service implements IElement{
         this.nom = nom;
     }
 
-    public List<IElement> getComposants() {
-        return composants;
-    }
-
-    public void setComposants(List<IElement> composants) {
-        this.composants = composants;
+    public List<IElement> getElements() {
+        return Collections.unmodifiableList(elements);
     }
 }
